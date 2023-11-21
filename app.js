@@ -8,7 +8,9 @@ app.get('/',(req,res)=>{
   res.send("todo app");
 });
 
-
+app.get("/home",(req,res)=>{
+  res.render("pages/index.ejs");
+});
 
 
 app.listen(port,()=>{
