@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,4 +23,97 @@
       </ul>
     </div>
   </body>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #taskInput, #dateInput, #timeInput {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Todo List App</h1>
+
+    <label for="taskInput">Task:</label>
+    <input type="text" id="taskInput" placeholder="Enter task">
+
+    <label for="dateInput">Date:</label>
+    <input type="date" id="dateInput">
+
+    <label for="timeInput">Time:</label>
+    <input type="time" id="timeInput">
+
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById('taskInput');
+            var dateInput = document.getElementById('dateInput');
+            var timeInput = document.getElementById('timeInput');
+
+            if (taskInput.value === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            var taskList = document.getElementById('taskList');
+            var li = document.createElement('li');
+            li.innerHTML = taskInput.value;
+
+            if (dateInput.value !== "") {
+                li.innerHTML += " - Date: " + dateInput.value;
+            }
+
+            if (timeInput.value !== "") {
+                li.innerHTML += " - Time: " + timeInput.value;
+            }
+
+            li.innerHTML += ' <button onclick="updateTask(this)">Update</button>';
+            li.innerHTML += ' <button onclick="deleteTask(this)">Delete</button>';
+
+            taskList.appendChild(li);
+
+            taskInput.value = "";
+            dateInput.value = "";
+            timeInput.value = "";
+        }
+
+        function updateTask(button) {
+            var newTask = prompt("Update task:", button.parentNode.firstChild.nodeValue);
+            if (newTask !== null) {
+                button.parentNode.firstChild.nodeValue = newTask;
+            }
+        }
+
+        function deleteTask(button) {
+            button.parentNode.remove();
+        }
+    </script>
+
+</body>
+>>>>>>> 69eb20a988b073fcfa0b8b70e969c34fecf42969
 </html>
