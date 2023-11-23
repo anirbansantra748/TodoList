@@ -1,119 +1,37 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
-  </head>
-  <body>
-    <h1>home page</h1>
-
-    <form action="">
-      <input type="text" placeholder="Write Task" />
-      <button>Add Task</button>
-    </form>
-
-    <h2>Tasks -</h2>
-    <div>
-      <ul>
-        <li>task 1</li>
-        <li>task 2</li>
-        <li>task 3</li>
-      </ul>
-    </div>
-  </body>
-=======
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        #taskInput, #dateInput, #timeInput {
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        button {
-            margin-left: 5px;
-        }
-    </style>
-</head>
+    <title>TaskHive</title>
+</head> -->
+<% layout("/layouts/boilerplate.ejs") %>
 <body>
-
-    <h1>Todo List App</h1>
-
-    <label for="taskInput">Task:</label>
-    <input type="text" id="taskInput" placeholder="Enter task">
-
-    <label for="dateInput">Date:</label>
-    <input type="date" id="dateInput">
-
-    <label for="timeInput">Time:</label>
-    <input type="time" id="timeInput">
-
-    <button onclick="addTask()">Add Task</button>
-
-    <ul id="taskList"></ul>
-
-    <script>
-        function addTask() {
-            var taskInput = document.getElementById('taskInput');
-            var dateInput = document.getElementById('dateInput');
-            var timeInput = document.getElementById('timeInput');
-
-            if (taskInput.value === "") {
-                alert("Please enter a task");
-                return;
-            }
-
-            var taskList = document.getElementById('taskList');
-            var li = document.createElement('li');
-            li.innerHTML = taskInput.value;
-
-            if (dateInput.value !== "") {
-                li.innerHTML += " - Date: " + dateInput.value;
-            }
-
-            if (timeInput.value !== "") {
-                li.innerHTML += " - Time: " + timeInput.value;
-            }
-
-            li.innerHTML += ' <button onclick="updateTask(this)">Update</button>';
-            li.innerHTML += ' <button onclick="deleteTask(this)">Delete</button>';
-
-            taskList.appendChild(li);
-
-            taskInput.value = "";
-            dateInput.value = "";
-            timeInput.value = "";
-        }
-
-        function updateTask(button) {
-            var newTask = prompt("Update task:", button.parentNode.firstChild.nodeValue);
-            if (newTask !== null) {
-                button.parentNode.firstChild.nodeValue = newTask;
-            }
-        }
-
-        function deleteTask(button) {
-            button.parentNode.remove();
-        }
-    </script>
-
+	<div class="dashboard">
+		<div class="left-container">
+			<h6>Name</h6>
+			<div class="button-container">
+				<div class="btn btn-primary">Home</div>
+				<br />
+				<div class="btn btn-primary">Tasks</div>
+				<!-- Add more buttons as needed -->
+			</div>
+		</div>
+		<h2>
+			<b>Dashboard</b>
+		</h2>
+		<div class="right-container">
+			<div class="completed-task"> <span>234</span> <br>
+                Completed tasks</div>
+			<div class="todo-task"> <span>34</span> <br>
+                 Todo Tasks</div>
+			<div class="ongoing-task"> <span>4</span> <br>
+                Ongoing Tasks</div>
+			<div class="Weekly Activity">Weekly Activity
+				<div class="Weekly-calender"></div>
+				<div class="activities"></div>
+			</div>
+		</div>
+	</div>
 </body>
->>>>>>> 69eb20a988b073fcfa0b8b70e969c34fecf42969
-</html>
+<!-- </html> -->

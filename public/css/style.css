@@ -1,0 +1,103 @@
+body {
+	font-family: "Plus Jakarta Sans", sans-serif !important;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: rgb(179, 187, 225) !important;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+.dashboard {
+	display: flex;
+	height: 80vh;
+	border-radius: 10px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+}
+
+.left-container {
+	background-color: rgb(224, 224, 224);
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding: 20px; /* Adjust padding as needed */
+	width: 15vw;
+}
+.button-container {
+	display: flex;
+	flex-direction: column;
+	/* gap: 10px; */
+}
+
+.btn {
+	background-color: rgb(224, 224, 224) !important;
+	margin: white !important;
+	color: black !important;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+	background-color: rgb(7, 125, 175) !important;
+	color: white !important;
+}
+
+.right-container {
+	display: flex;
+	flex-direction: column;
+    padding: 20px;
+	align-items: flex-end; /* Align to the right */
+	flex: 1; /* Use flex to make it occupy the remaining space */
+    width: 15vw;
+    justify-content: left !important;
+}
+
+.completed-task,
+.todo-task,
+.ongoing-task {
+	color: white;
+	height: 70px; /* Adjust height as needed */
+    width: 200px;
+	margin-bottom: 10px; /* Add margin between tasks */
+    border-radius: 10px;
+}
+.completed-task{
+    background-color: black;
+}
+.todo-task{
+    background-color: rgb(179, 187, 225);
+}
+.ongoing-task{
+    background-color: rgb(234, 234, 234);
+    color: black !important;
+}
+
+.Weekly-Activity {
+	display: flex;
+	flex-direction: column;
+	background-color: lightgray;
+	margin-top: 10px; /* Add margin above Weekly Activity */
+	padding: 10px; /* Adjust padding as needed */
+}
+
+.Weekly-calender,
+.activities {
+	background-color: white;
+	height: 50px; /* Adjust height as needed */
+	margin-bottom: 5px; /* Add margin between items */
+}
+
+h2 {
+	display: inline;
+	justify-content: center;
+}
+
+h6 {
+	margin-right: 10px;
+	display: inline;
+}
