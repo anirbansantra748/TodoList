@@ -1,39 +1,104 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskHive</title>
-</head> -->
 <% layout("/layouts/boilerplate.ejs") %>
 <body>
 	<div class="dashboard">
 		<div class="left-container">
 			<h6>Name</h6>
 			<div class="button-container">
-				<div class="btn btn-primary">Home</div>
+				<div class="btn btn-primary">
+					<i class="fa-solid fa-house"></i>Home
+				</div>
 				<br />
-				<div class="btn btn-primary">Tasks</div>
-				<br>
-				<a href="/add"><div class="btn btn-primary">Add Task</div></a>
+				<div class="btn btn-primary">
+					<i class="fa-solid fa-table-list"></i>Tasks
+				</div>
+				<br />
+				<a href="/add"
+					><div class="btn btn-primary">
+						<i class="fa-regular fa-square-plus"></i>Add Task
+					</div></a
+				>
 				<!-- Add more buttons as needed -->
 			</div>
 		</div>
-		<h2>
-			<b>Dashboard</b>
-		</h2>
+		<div class="mid-container">
+			<div class="heading row mb-3">
+				<h2 class="head">
+					<b ><i class="fa-solid fa-clipboard-list"></i> Dashboard</b>
+				</h2>
+				
+					<div class="container-fluid">
+						<form class="d-flex" role="search">
+							<input
+								class="form-control me-2"
+								type="search"
+								placeholder="Search Task"
+								aria-label="Search" />
+							<button class="btn btn-outline-success" type="submit">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</button>
+						</form>
+					</div>
+
+			</div>
+
+			<div class="display">
+				<img
+					class="display-img"
+					src="https://i.imgur.com/9BnAi6X.png"
+					alt="bg1" />
+				<span class="lets-go-btn"
+					><button class="btn btn-primary">
+						Let's Go<i class="fa-solid fa-arrow-right"></i></button
+				></span>
+			</div>
+			<div class="completed mt-3">
+				Completed Tasks
+			</div>
+		</div>
 		<div class="right-container">
-			<div class="completed-task"> <span>234</span> <br>
-                Completed tasks</div>
-			<div class="todo-task"> <span>34</span> <br>
-                 Todo Tasks</div>
-			<div class="ongoing-task"> <span>4</span> <br>
-                Ongoing Tasks</div>
-			<div class="Weekly Activity">Weekly Activity
-				<div class="Weekly-calender"></div>
-				<div class="activities"></div>
+			<div class="completed-task">
+				<span>234</span> <br />
+				Completed tasks
+			</div>
+			<div class="todo-task">
+				<span>34</span> <br />
+				Todo Tasks
+			</div>
+			<div class="ongoing-task">
+				<span>4</span> <br />
+				Ongoing Tasks
+			</div>
+			<div class="weekly-activity">
+				Weekly Activity
+				<div class="black-box row">
+					<div class="weekly-calendar row-2 mt-3">
+						<!-- Add your scrollable calendar content here -->
+						<!-- Example: -->
+
+						<span class="day">Mon</span>
+						<span class="day">Tue</span>
+						<span class="day">Wed</span>
+						<span class="day">Thurs</span>
+						<span class="day">Fri</span>
+						<span class="day">Sat</span>
+						<!-- Add more days as needed -->
+					</div>
+					<div class="activities overflow-y-auto row-3  mt-3">
+						<!-- Add your small divs for activities here -->
+						<!-- Example: -->
+						<div class="activity">Activity 1</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<div class="activity">Activity 2</div>
+						<!-- Add more activities as needed -->
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </body>
-<!-- </html> -->
