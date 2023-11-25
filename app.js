@@ -53,13 +53,24 @@ app.post("/add",async(req,res)=>{
   res.redirect("/home");
 });
 
-app.get("/addtask",async (req,res)=>{
-  let sampleTodo = new TODO({
-    task:"code - LeetCode",
-    duration:"6:00 - 8:00",
-  });
-  await sampleTodo.save();
-  res.send(sampleTodo);
+//NOTE - edit rout form render
+app.get("/edit/:id",async(req,res)=>{
+  const id = req.params.id;
+  const currTask = await TODO.findById(id);
+  res.render("pages/editTask.ejs",{currTask:currTask});
+})
+
+//post rout or edit rout
+app.post("/edit/:id", async (req,res)=>{
+  const id = req.params.id;
+  const {task,duration} = req.body;
+  const currtask = await TODO.findById(id);
+
+  currtask.task = task;
+  currtask.duration = duration;
+
+  await currtask.save();
+  res.redirect("/home");
 })
 
 //root route

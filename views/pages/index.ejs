@@ -68,6 +68,8 @@
 				<span>4</span> <br />
 				Ongoing Tasks
 			</div>
+
+			
 			<div class="weekly-activity">
 				Weekly Activity
 				<div class="black-box row">
@@ -85,18 +87,10 @@
 					</div>
 					<div class="activities overflow-y-auto row-3  mt-3">
 						<!-- Add your small divs for activities here -->
-						<!-- Example: -->
+
 						<% tasks.forEach(task => { %>
-							<div class="activity"><%= task.task %> - <%= task.duration %></div>
+							<a href="/edit/<%= task._id %>"><div class="activity"><%= task.task %> - <%= task.duration %></div></a>
 					  <% }) %>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
-						<div class="activity">Activity 2</div>
 						<!-- Add more activities as needed -->
 					</div>
 				</div>

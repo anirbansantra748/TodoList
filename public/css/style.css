@@ -162,10 +162,15 @@ h6 {
 	padding: 10px;
 }
 .activity{
-	height: 50px;
+	height: auto;
 	width: 100%;
 	border-radius: 10px;
 	background-color: rgb(69, 68, 68);
 	margin:3px;
 	padding: 10px;
 }
+.activities a{
+	color: aliceblue;
+	text-decoration: none;
+}
+
