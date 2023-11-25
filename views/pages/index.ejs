@@ -86,7 +86,9 @@
 					<div class="activities overflow-y-auto row-3  mt-3">
 						<!-- Add your small divs for activities here -->
 						<!-- Example: -->
-						<div class="activity">Activity 1</div>
+						<% tasks.forEach(task => { %>
+							<div class="activity"><%= task.task %> - <%= task.duration %></div>
+					  <% }) %>
 						<div class="activity">Activity 2</div>
 						<div class="activity">Activity 2</div>
 						<div class="activity">Activity 2</div>
