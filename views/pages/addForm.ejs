@@ -1,16 +1,17 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <body>
-	<div class="dashboard-add row ">
+	<div class="dashboard-add row">
 		<div class="col-8 offset-2 mt-3">
 			<br />
 			<h2>Add New Task</h2>
 			<br />
 			<form
-				action="/add" method="post"
+				action="/add"
+				method="post"
 				novalidate
 				class="needs-validation">
 				<div class="mb-3">
-					<label for="task" class="form-label">Task-</label>
+					<label for="task" class="form-label">Task</label>
 					<input
 						name="task"
 						id="task"
@@ -23,16 +24,93 @@
 					</div>
 				</div>
 				<div class="mb-3">
-					<label for="duration" class="form-label">Duration</label>
+					<label for="duration" class="form-label">Date</label>
 					<input
 						name="duration"
 						placeholder="Enter a Duration for your task"
-						type="text"
+						type="date"
 						id="duration"
 						class="form-control"
 						required />
 					<div class="invalid-feedback">
-						Please provide a duration.
+						Please provide a valid date.
+					</div>
+				</div>
+				<div class="row">
+					<div class="mb-3 col-md-4">
+						<label for="duration" class="form-label"
+							>Starting Time</label
+						>
+						<input
+							name="duration"
+							placeholder="Enter a Duration for your task"
+							type="time"
+							id="duration"
+							class="form-control"
+							required />
+						<div class="invalid-feedback">
+							Please provide a valid time.
+						</div>
+					</div>
+					<div class="mb-3 col-md-8">
+						<label for="duration" class="form-label"
+							>Ending Time</label
+						>
+						<input
+							name="duration"
+							placeholder="Enter a Duration for your task"
+							type="time"
+							id="duration"
+							class="form-control"
+							required />
+						<div class="invalid-feedback">
+							Please provide a valid time.
+						</div>
+					</div>
+					Repeat Task
+					<div
+						class="btn-group mb-3 "
+						role="group"
+						aria-label="Basic radio toggle button group">
+						<input
+							type="radio"
+							class="btn-check"
+							name="btnradio"
+							id="btnradio1"
+							autocomplete="off"
+							 />
+						<label class="btn .btn-outline-*" for="btnradio1"
+							>Daily</label
+						>
+
+						<input
+							type="radio"
+							class="btn-check"
+							name="btnradio"
+							id="btnradio2"
+							autocomplete="off" />
+						<label class="btn .btn-outline-*" for="btnradio2"
+							>Weekly</label
+						>
+
+						<input
+							type="radio"
+							class="btn-check"
+							name="btnradio"
+							id="btnradio3"
+							autocomplete="off" />
+						<label class="btn .btn-outline-*" for="btnradio3"
+							>Monthly</label
+						>
+						<input
+							type="radio"
+							class="btn-check"
+							name="btnradio"
+							id="btnradio3"
+							autocomplete="off" />
+						<label class="btn .btn-outline-*" for="btnradio3"
+							>Yearly</label
+						>
 					</div>
 				</div>
 				<button class="btn btn-dark add-btn">Add</button>

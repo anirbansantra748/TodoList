@@ -23,15 +23,32 @@ body {
 	text-align: flex-start;
 	background-color: rgb(255, 255, 255);
 }
+.dashboard-show{
+	display: flex;
+	height: 80vh;
+	border-radius: 10px;
+	text-align: flex-start;
+	background-color: rgb(255, 255, 255);
+}
+
+.container-fluid {
+	margin-bottom: 10px;
+	height: 30px !important;
+	display: flex;
+	flex-direction: row !important;
+	justify-content: space-around !important;
+}
 
 .left-container {
-	background-color: rgb(224, 224, 224);
+	background-color: rgb(247, 245, 245);
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 	padding: 20px; /* Adjust padding as needed */
-	width: 15vw;
+	width: 12vw;
+	display: flex;
+	flex-direction: column;
 }
 .button-container {
 	display: flex;
@@ -40,7 +57,7 @@ body {
 }
 
 .btn {
-	background-color: rgb(224, 224, 224) !important;
+	background-color: rgb(247, 245, 245) !important;
 	margin: white !important;
 	color: black !important;
 	padding: 10px;
@@ -68,10 +85,12 @@ body {
 .todo-task,
 .ongoing-task {
 	color: white;
-	height: 70px; /* Adjust height as needed */
-	width: 200px;
+	height: 90px; /* Adjust height as needed */
+	width: 250px;
 	margin-bottom: 10px; /* Add margin between tasks */
 	border-radius: 10px;
+	padding: 5px;
+	text-align: left;
 }
 .completed-task {
 	background-color: black;
@@ -84,26 +103,28 @@ body {
 	color: black !important;
 }
 
-.mid-container{
+.mid-container {
 	display: flex;
-    align-items: flex-start;
+	align-items: flex-start;
 	flex-direction: column;
+	padding: 10px;
 }
-.heading{
+.heading {
 	display: flex;
 	flex-direction: row;
 	margin-left: 3px;
 }
-.head{
+.head {
 	margin-top: 2px;
-	margin-right: 300px;
 	display: flex;
+	height: 20px !important;
 }
 
 .display-img {
 	margin-top: 5px;
-	margin-left: 45px;
-	width: 500px;
+	margin-left: 15px;
+	width: 400px;
+	height: 243px;
 	border-radius: 10px;
 }
 
@@ -127,7 +148,14 @@ body {
 	height: 300px; /* Adjust height as needed */
 	width: 400px;
 	overflow-y: auto; /* Enable vertical scroll */
-	border-radius: 10px;
+	border-radius: 8px;
+}
+
+.weekly-activity {
+	margin-right: 6px;
+	margin-bottom: 3px;
+	text-align: center;
+	padding: 10px;
 }
 
 .weekly-calendar {
@@ -141,19 +169,51 @@ body {
 	float: right;
 	width: 50%;
 }
-.completed{
-	background-color: grey;
+.completed {
+	background-color: rgb(255, 255, 255);
 	border-radius: 10px;
-	color: whitesmoke;
+	color: rgb(0, 0, 0);
 	margin-left: 6px;
+	padding: 10px;
+	text-align: left;
+}
+.done-tasks {
+	height: 210px;
+	width: 650px;
+	display: flex;
+	flex-direction: column;
+	background-color: dimgray;
+	border-radius: 5px;
+
+	padding: 10px;
+	text-align: left;
+	text-decoration: none;
 }
 
+.done-tasks::-webkit-scrollbar {
+	width: 5px;
+	background-color: dimgray;
+	border-radius: 5px;
+}
+
+.done-tasks::-webkit-scrollbar-thumb {
+	background: dimgray;
+	border-radius: 5px;
+}
+.done-tasks a {
+	text-decoration: none;
+	color: aliceblue;
+}
 h6 {
 	margin-right: 10px;
 	display: inline;
+	text-align: left !important;
+}
+h5 {
+	text-align: end;
 }
 
-.day{
+.day {
 	height: 50px;
 	width: 50px;
 	border-radius: 5px;
@@ -161,16 +221,46 @@ h6 {
 	/* margin:3px; */
 	padding: 10px;
 }
-.activity{
+.activity {
 	height: auto;
 	width: 100%;
 	border-radius: 10px;
 	background-color: rgb(69, 68, 68);
-	margin:3px;
+	margin: 3px;
 	padding: 10px;
 }
-.activities a{
+.activities a {
 	color: aliceblue;
+	text-decoration: none;
+	text-align: left;
+}
+.black-box::-webkit-scrollbar {
+	width: 10px;
+	background-color: #000;
+	border-radius: 10px;
+}
+.black-box:-webkit-scrollbar-thumb {
+	background: rgb(189, 189, 189);
+	border-radius: 10px;
+}
+.options {
+	justify-content: end;
+}
+.f-info-links a {
 	text-decoration: none;
 }
 
+i {
+	margin: 2px;
+	padding: 3px;
+}
+
+.btn-group input:checked + label {
+	background-color: #007bff; /* Change this to your desired background color */
+	color: #fff; /* Change this to your desired text color */
+}
+
+.btn-group label {
+	border-color: #007bff; /* Change this to your desired border color */
+	color: #007bff; /* Change this to your desired text color */
+}

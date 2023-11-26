@@ -36,13 +36,19 @@ app.get("/home",async (req,res)=>{
   let tasks = await TODO.find({});
   res.render("pages/index.ejs", {tasks})}
 );
+//show all tasks route
+app.get("/allTasks",async (req,res)=>{
+  let tasks = await TODO.find({});
+  res.render("pages/allTasks.ejs", {tasks})}
+);
 
-//NOTE - add task get rout to serve form
+
+//NOTE - add task get route to serve form
 app.get("/add",(req,res)=>{
   res.render("pages/addForm.ejs");
 });
 
-//NOTE - add task post route for save in databace
+//NOTE - add task post route for save in database
 app.post("/add",async(req,res)=>{
   const {task, duration} = req.body;
    const newTask = new TODO({
@@ -53,14 +59,14 @@ app.post("/add",async(req,res)=>{
   res.redirect("/home");
 });
 
-//NOTE - edit rout form render
+//NOTE - edit route form render
 app.get("/edit/:id",async(req,res)=>{
   const id = req.params.id;
   const currTask = await TODO.findById(id);
   res.render("pages/editTask.ejs",{currTask:currTask});
 })
 
-//post rout or edit rout
+//post route or edit route
 app.post("/edit/:id", async (req,res)=>{
   const id = req.params.id;
   const {task,duration} = req.body;
