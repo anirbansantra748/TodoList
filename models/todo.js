@@ -7,6 +7,7 @@ const todoSchema = new Schema({
     required: true,
   },
   duration:String,
+  done:Boolean,
 });
 
 const TODO = mongoose.model("TODO",todoSchema);

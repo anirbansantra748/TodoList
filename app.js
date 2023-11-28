@@ -77,7 +77,13 @@ app.post("/edit/:id", async (req,res)=>{
 
   await currtask.save();
   res.redirect("/home");
-})
+});
+
+app.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  await TODO.findByIdAndDelete(id);
+  res.redirect("/home");
+});
 
 //root route
 app.get('/',(req,res)=>{

@@ -65,8 +65,7 @@
 						<h3><b><i class="fa-solid fa-clipboard-list"></i>
 								Dashboard</b></h3>
 						<form class="d-flex" role="search">
-							<input class="form-control me-2 lg-6" type="search" placeholder="Search Tasks"
-								aria-label="Search">
+							<input class="form-control me-2 lg-6" type="search" placeholder="Search Tasks" aria-label="Search">
 							<button class="btn .btn-outline-*" type="submit"><i
 									class="fa-solid fa-magnifying-glass"></i>Search</button>
 						</form>
@@ -126,17 +125,16 @@
 					</div>
 					<div class="activities overflow-y-auto row-3  mt-3">
 						<% tasks.forEach(task=> { %>
-							<a href="/edit/<%= task._id %>">
-								<div class="activity">
-									<%= task.task %> - <%= task.duration %>
-											<div class="options">
-												<i class="fa-solid fa-check"></i>
-												<i class="fa-solid fa-pen"></i>
-												<i class="fa-solid fa-xmark"></i>
-
-											</div>
-								</div>
-							</a>
+							<div class="activity">
+								<%= task.task %> - <%= task.duration %>
+										<div class="options">
+											<i class="fa-solid fa-check"></i>
+											<a href="/edit/<%= task._id %>"><i class="fa-solid fa-pen"></i></a>
+											<form method="POST" action="/delete/<%= task._id %>?_method=DELETE">
+												<button class="btn btn-danger btn-sm delete Btn"><i class="fa-solid fa-pen"></i></button>
+											</form>
+										</div>
+							</div>
 
 							<% }) %>
 					</div>
