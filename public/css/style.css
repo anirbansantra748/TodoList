@@ -7,6 +7,10 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin: 0;
+	background-image: url("https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+	background-size: cover; /* Adjust the background size as needed */
+	background-repeat: no-repeat;
+	background-attachment: fixed; /* This will make the background image fixed while scrolling */
 }
 
 .dashboard {
@@ -15,20 +19,69 @@ body {
 	border-radius: 10px;
 	text-align: center;
 	background-color: rgb(255, 255, 255);
+	background-image: url("https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover; /* Adjust the background size as needed */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 .dashboard-add {
 	display: flex;
 	height: 80vh;
 	border-radius: 10px;
 	text-align: flex-start;
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(48, 133, 172, 0);
+	margin: 2px solid black;
+	border: 4px solid #000; /* Black border */
+	background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+	color: #fff !important; /* White text color */
+	padding: 20px;
+	border-radius: 10px; /* Optional: Add border radius for rounded corners */
 }
-.dashboard-show{
+.dashboard-show {
 	display: flex;
 	height: 80vh;
 	border-radius: 10px;
 	text-align: flex-start;
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(48, 133, 172, 0);
+	margin: 2px solid black;
+	border: 4px solid #000; /* Black border */
+	background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+	color: #fff !important; /* White text color */
+	padding: 20px;
+	border-radius: 10px; /* Optional: Add border radius for rounded corners */
+}
+.navbar {
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	width: 100% !important;
+	padding: 10px 0 !important; /* Adjust the padding as needed */
+	box-sizing: border-box !important;
+	color: aliceblue;
+}
+
+.navbar h3 {
+	margin: 0 !important;
+}
+
+.navbar form {
+	display: flex !important;
+	margin-left: auto !important;
+}
+
+.navbar input,
+.navbar button {
+	margin-right: 10px !important; /* Adjust the margin as needed */
+}
+
+.mid-container {
+	width: 80% !important;
+}
+.mid{
+	width: 79% !important;
+}
+.navbar-brand{
+	color: aliceblue !important;
 }
 
 .container-fluid {
@@ -49,6 +102,10 @@ body {
 	width: 12vw;
 	display: flex;
 	flex-direction: column;
+	background-image: url("https://images.unsplash.com/photo-1579547621244-c07e55dcb856?q=80&w=1878&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover; /* Adjust the background size as needed */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 .button-container {
 	display: flex;
@@ -57,8 +114,8 @@ body {
 }
 
 .btn {
-	background-color: rgb(247, 245, 245) !important;
-	margin: white !important;
+	background-color: whitesmoke !important;
+	margin: rgb(232, 230, 230) !important;
 	color: black !important;
 	padding: 10px;
 	border: none;
@@ -67,8 +124,28 @@ body {
 }
 
 .btn:hover {
-	background-color: rgb(7, 125, 175) !important;
+	background-color: rgb(54, 21, 217) !important;
 	color: white !important;
+	box-shadow: #000;
+}
+.dlt {
+	background-color: rgba(69, 68, 68, 0) !important ;
+}
+.dlt:hover {
+	background-color: rgba(69, 68, 68, 0) !important ;
+}
+.edt {
+	color: black;
+	margin-left: 13px !important;
+}
+.edt:hover {
+	color: white;
+}
+.chk {
+	color: black;
+}
+.chk:hover {
+	color: white;
 }
 
 .right-container {
@@ -96,11 +173,11 @@ body {
 	background-color: black;
 }
 .todo-task {
-	background-color: rgb(179, 187, 225);
+	background-color: rgb(93, 65, 232);
 }
 .ongoing-task {
-	background-color: rgb(234, 234, 234);
-	color: black !important;
+	background-color: rgb(53, 30, 167);
+	color: rgb(255, 255, 255) !important;
 }
 
 .mid-container {
@@ -109,11 +186,11 @@ body {
 	flex-direction: column;
 	padding: 10px;
 }
-.heading {
+/* .heading {
 	display: flex;
 	flex-direction: row;
 	margin-left: 3px;
-}
+} */
 .head {
 	margin-top: 2px;
 	display: flex;
@@ -149,42 +226,44 @@ body {
 	width: 400px;
 	overflow-y: auto; /* Enable vertical scroll */
 	border-radius: 8px;
+	background-image: url("https://images.unsplash.com/photo-1557683304-673a23048d34?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover; /* Adjust the background size as needed */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
-.weekly-activity {
+.completed {
 	margin-right: 6px;
 	margin-bottom: 3px;
 	text-align: center;
 	padding: 10px;
 }
 
-.weekly-calendar {
-	float: left;
-	width: 50%;
-}
-
 .activities {
 	color: white;
-	background-color: #000;
+	background-color: rgba(0, 0, 0, 0);
 	float: right;
 	width: 50%;
 }
-.completed {
-	background-color: rgb(255, 255, 255);
+.allTasks {
+	background-color: rgba(0, 0, 0, 0);
 	border-radius: 10px;
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	margin-left: 6px;
 	padding: 10px;
 	text-align: left;
 }
 .done-tasks {
-	height: 210px;
+	height: 480px;
 	width: 650px;
 	display: flex;
 	flex-direction: column;
 	background-color: dimgray;
 	border-radius: 5px;
-
+	background-image: url("https://images.unsplash.com/photo-1557683304-673a23048d34?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover; /* Adjust the background size as needed */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	padding: 10px;
 	text-align: left;
 	text-decoration: none;
@@ -192,12 +271,12 @@ body {
 
 .done-tasks::-webkit-scrollbar {
 	width: 5px;
-	background-color: dimgray;
+	background-color: rgb(54, 21, 217);
 	border-radius: 5px;
 }
 
 .done-tasks::-webkit-scrollbar-thumb {
-	background: dimgray;
+	background: rgb(54, 21, 217);
 	border-radius: 5px;
 }
 .done-tasks a {
@@ -208,39 +287,35 @@ h6 {
 	margin-right: 10px;
 	display: inline;
 	text-align: left !important;
+	color: whitesmoke !important;
 }
 h5 {
 	text-align: end;
+	color: whitesmoke !important;
 }
 
-.day {
-	height: 50px;
-	width: 50px;
-	border-radius: 5px;
-	background-color: rgb(69, 68, 68);
-	/* margin:3px; */
-	padding: 10px;
-}
 .activity {
 	height: auto;
-	width: 100%;
+	width: 80%;
 	border-radius: 10px;
-	background-color: rgb(69, 68, 68);
+	background-color: rgb(82, 52, 235);
 	margin: 3px;
 	padding: 10px;
+	text-align: left;
 }
+
 .activities a {
 	color: aliceblue;
 	text-decoration: none;
 	text-align: left;
 }
-.black-box::-webkit-scrollbar {
+.activities::-webkit-scrollbar {
 	width: 10px;
-	background-color: #000;
+	background-color: rgb(54, 21, 217);
 	border-radius: 10px;
 }
-.black-box:-webkit-scrollbar-thumb {
-	background: rgb(189, 189, 189);
+.activities:-webkit-scrollbar-thumb {
+	background: rgb(54, 21, 217);
 	border-radius: 10px;
 }
 .options {
@@ -263,4 +338,20 @@ i {
 .btn-group label {
 	border-color: #007bff; /* Change this to your desired border color */
 	color: #007bff; /* Change this to your desired text color */
+}
+
+.options {
+	display: flex;
+	align-items: center;
+}
+
+.options i {
+	margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.options form {
+	margin-right: 0; /* Move the delete button to the right */
+}
+.f-info-brand {
+	color: whitesmoke;
 }

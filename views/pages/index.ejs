@@ -56,43 +56,46 @@
 			</div>
 		</div>
 		<div class="mid-container">
-			<div class="heading row mb-3">
-
+			<nav class="navbar navbar-expand-lg .bg-body mid">
 				<div class="container-fluid">
-					<!-- <div class="heading row mb-3"> -->
-					<nav class="navbar">
-						<!-- <div class="container-fluid"> -->
-						<h3><b><i class="fa-solid fa-clipboard-list"></i>
-								Dashboard</b></h3>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+						<a class="navbar-brand" href="#">Dashboard</a>
+						
 						<form class="d-flex" role="search">
-							<input class="form-control me-2 lg-6" type="search" placeholder="Search Tasks" aria-label="Search">
-							<button class="btn .btn-outline-*" type="submit"><i
-									class="fa-solid fa-magnifying-glass"></i>Search</button>
+							<input class="form-control me-2" type="search" placeholder="Search Tasks" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Search</button>
 						</form>
-						<!-- </div> -->
-					</nav>
-					<!-- </div> -->
+					</div>
 				</div>
+			</nav>
 
-			</div>
-
-			<div class="display mt-3">
+			<!-- <div class="display mt-3">
 				<img class="display-img" src="https://i.imgur.com/9BnAi6X.png" alt="bg1" />
 				<span class="lets-go-btn"><button class="btn .btn-outline-*">
 						Let's Go<i class="fa-solid fa-arrow-right"></i></button></span>
-			</div>
-			<div class="completed  mt-1">
-				<h5>Completed Tasks</h5>
+			</div> -->
+			<div class="allTasks  mt-1">
+				<h5>All Tasks</h5>
 
-				<div class="done-tasks overflow-y-auto">
+				<div class="done-tasks overflow-y-scroll">
 					<% tasks.forEach(task=> { %>
-						<a href="/edit/<%= task._id %>">
-							<div class="activity">
-								<s>
-									<%= task.task %>
-								</s>
-							</div>
-						</a>
+						<div class="activity">
+							<%= task.task %> - <%= task.duration %>
+									<div class="options">
+										<i class="fa-solid fa-check chk"></i>
+										<a href="/edit/<%= task._id %>"><i class="fa-solid fa-pen edt"></i></a>
+										<form method="POST" action="/delete/<%= task._id %>?_method=DELETE">
+											<button class="btn .btn-outline-* dlt"><i
+													class="fa-solid fa-xmark"></i></i></button>
+										</form>
+									</div>
+						</div>
+
 						<% }) %>
 				</div>
 			</div>
@@ -112,30 +115,19 @@
 			</div>
 
 
-			<div class="weekly-activity">
-				<h5>Weekly Activity</h5>
+			<div class="completed">
+				<h5>Completed Tasks</h5>
 				<div class="black-box row">
-					<div class="weekly-calendar row-2 mt-3">
-						<span class="day">Mon</span>
-						<span class="day">Tue</span>
-						<span class="day">Wed</span>
-						<span class="day">Thurs</span>
-						<span class="day">Fri</span>
-						<span class="day">Sat</span>
-					</div>
-					<div class="activities overflow-y-auto row-3  mt-3">
-						<% tasks.forEach(task=> { %>
-							<div class="activity">
-								<%= task.task %> - <%= task.duration %>
-										<div class="options">
-											<i class="fa-solid fa-check"></i>
-											<a href="/edit/<%= task._id %>"><i class="fa-solid fa-pen"></i></a>
-											<form method="POST" action="/delete/<%= task._id %>?_method=DELETE">
-												<button class="btn btn-danger btn-sm delete Btn"><i class="fa-solid fa-pen"></i></button>
-											</form>
-										</div>
-							</div>
+					<div class="activities overflow-y-scroll row-3  mt-3">
 
+						<% tasks.forEach(task=> { %>
+							<a href="/edit/<%= task._id %>">
+								<div class="activity">
+									<s>
+										<%= task.task %>
+									</s>
+								</div>
+							</a>
 							<% }) %>
 					</div>
 				</div>
