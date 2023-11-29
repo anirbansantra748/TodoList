@@ -56,23 +56,6 @@
 			</div>
 		</div>
 		<div class="mid-container">
-			<nav class="navbar navbar-expand-lg .bg-body mid">
-				<div class="container-fluid">
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-						aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-						<a class="navbar-brand" href="#">Dashboard</a>
-
-						<form class="d-flex" role="search">
-							<input class="form-control me-2" type="search" placeholder="Search Tasks" aria-label="Search">
-							<button class="btn btn-outline-success" type="submit">Search</button>
-						</form>
-					</div>
-				</div>
-			</nav>
-
 			<div class="allTasks  mt-1">
 				<h5>All Tasks</h5>
 
@@ -80,22 +63,27 @@
 					<% tasks.forEach(task=> { %>
 						<% if (!task.done) { %>
 							<div class="activity">
-								<%= task.task %> - <%= task.startTime %> &nbsp; <%= task.endTime %>
+								<%= task.task %> -> <%= task.startTime %> &nbsp;- <%= task.endTime %>
 											<br>
-											<%= task.date.toLocaleDateString() %>
-												<div class="options">
-													<form method="POST" action="/done/<%= task._id %>">
-														<button class="btn .btn-outline-* dlt"><i
-																class="fa-regular fa-circle-check chk"></i>
-														</button>
-													</form>
-													<a href="/edit/<%= task._id %>"><i class="fa-solid fa-pen edt"></i></a>
-													<form method="POST" action="/delete/<%= task._id %>?_method=DELETE">
-														<button class="btn .btn-outline-* dlt">
-															<i class="fa-solid fa-trash-can"></i>
-														</button>
-													</form>
-												</div>
+											<% if (task.date) { %>
+												Date: <%= task.date.toLocaleDateString() %>
+													<% } %>
+
+														<div class="options">
+															<form method="POST" action="/done/<%= task._id %>">
+																<button class="btn .btn-outline-* dlt"><i
+																		class="fa-regular fa-circle-check chk"></i>
+																</button>
+															</form>
+															<a href="/edit/<%= task._id %>"><i
+																	class="fa-solid fa-pen edt"></i></a>
+															<form method="POST"
+																action="/delete/<%= task._id %>?_method=DELETE">
+																<button class="btn .btn-outline-* dlt">
+																	<i class="fa-solid fa-trash-can"></i>
+																</button>
+															</form>
+														</div>
 							</div>
 							<% } %>
 								<% }) %>
@@ -104,15 +92,21 @@
 		</div>
 		<div class="right-container">
 			<div class="completed-task">
-				<span><%= tasks.filter(task => task.done).length %></span> <br />
+				<span>
+					<%= tasks.filter(task=> task.done).length %>
+				</span> <br />
 				Completed tasks
-		</div>
-		<div class="todo-task">
-				<span><%= tasks.filter(task => !task.done).length + tasks.filter(task => !task.done).length %></span> <br />
+			</div>
+			<div class="todo-task">
+				<span>
+					<%= tasks.filter(task=> !task.done).length + tasks.filter(task => !task.done).length %>
+				</span> <br />
 				Todo Tasks
-		</div>
+			</div>
 			<div class="ongoing-task">
-				<span><%= tasks.filter(task => !task.done).length %></span> <br />
+				<span>
+					<%= tasks.filter(task=> !task.done).length %>
+				</span> <br />
 				Ongoing Tasks
 			</div>
 
@@ -122,14 +116,19 @@
 				<div class="black-box row">
 					<div class="activities overflow-y-scroll row-3  mt-3">
 						<% tasks.forEach(task=> { %>
-								<% if(task.done){ %>
-									<div class="activity">
-										<s>
-											<%= task.task %>
-										</s>
-									</div>
-								<% } %>	
-							<% }) %>
+							<% if(task.done){ %>
+								<div class="compt">
+									<s>
+										<%= task.task %>
+									</s>
+									<form method="POST" action="/delete/<%= task._id %>?_method=DELETE">
+										<button class="btn .btn-outline-* dlt-1">
+											<i class="fa-solid fa-trash-can"></i>
+										</button>
+									</form>
+								</div>
+								<% } %>
+									<% }) %>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 // data.js
 const mongoose = require("mongoose");
-const TODO = require("./models/todo.js");
+const TODO = require("../models/todo.js");
 
 async function initializeData() {
   try {

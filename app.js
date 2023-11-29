@@ -49,6 +49,10 @@ app.get("/allTasks",async (req,res)=>{
 app.get("/add",(req,res)=>{
   res.render("pages/addForm.ejs");
 });
+//NOTE - add task get route to serve form
+app.get("/profile",(req,res)=>{
+  res.render("pages/profile.ejs");
+});
 
 //NOTE - add task post route for save in database
 app.post("/add",async(req,res)=>{
