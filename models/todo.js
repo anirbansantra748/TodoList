@@ -3,12 +3,27 @@ const Schema = mongoose.Schema;
 
 const todoSchema = new Schema({
   task: {
-    type:String,
+    type: String,
     required: true,
   },
-  duration:String,
-  done:Boolean,
+  date: {
+    type: Date,
+    required: true,
+  },
+  startTime: {
+    type: String,
+    required: true,
+  },
+  endTime: {
+    type: String,
+    required: true,
+  },
+  done: {
+    type: Boolean,
+    default: false,
+    required: true,
+  },
 });
 
-const TODO = mongoose.model("TODO",todoSchema);
+const TODO = mongoose.model("TODO", todoSchema);
 module.exports = TODO;

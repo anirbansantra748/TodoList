@@ -31,11 +31,13 @@ main()
     console.log(err);
   });
 
+
 //index route
 app.get("/home",async (req,res)=>{
   let tasks = await TODO.find({});
   res.render("pages/index.ejs", {tasks})}
 );
+
 //show all tasks route
 app.get("/allTasks",async (req,res)=>{
   let tasks = await TODO.find({});
@@ -50,10 +52,12 @@ app.get("/add",(req,res)=>{
 
 //NOTE - add task post route for save in database
 app.post("/add",async(req,res)=>{
-  const {task, duration} = req.body;
+  const {task, date, startTime, endTime} = req.body;
    const newTask = new TODO({
     task,
-    duration,
+    date,
+    startTime,
+    endTime,
    });
   await newTask.save();
   res.redirect("/home");
@@ -69,11 +73,13 @@ app.get("/edit/:id",async(req,res)=>{
 //post route or edit route
 app.post("/edit/:id", async (req,res)=>{
   const id = req.params.id;
-  const {task,duration} = req.body;
+  const {task, date, startTime, endTime} = req.body;
   const currtask = await TODO.findById(id);
 
   currtask.task = task;
-  currtask.duration = duration;
+  currtask.date = date;
+  currtask.startTime = startTime;
+  currtask.endTime = endTime;
 
   await currtask.save();
   res.redirect("/home");
@@ -85,6 +91,15 @@ app.delete("/delete/:id", async (req, res) => {
   res.redirect("/home");
 });
 
+//done task
+app.post("/done/:id",async (req,res)=>{
+  const id = req.params.id;
+  const currtask = await TODO.findById(id);
+  currtask.done = true;
+  await currtask.save();
+  res.redirect("/home");
+});
+
 //root route
 app.get('/',(req,res)=>{
   res.send("todo app");
@@ -92,4 +107,4 @@ app.get('/',(req,res)=>{
 
 app.listen(port,()=>{
   console.log("app is started");
-});
+}); 

@@ -24,12 +24,12 @@
 					</div>
 				</div>
 				<div class="mb-3">
-					<label for="duration" class="form-label">Date</label>
+					<label for="date" class="form-label">Date</label>
 					<input
-						name="duration"
+						name="date"
 						placeholder="Enter a Duration for your task"
 						type="date"
-						id="duration"
+						id="date"
 						class="form-control"
 						required />
 					<div class="invalid-feedback">
@@ -38,14 +38,14 @@
 				</div>
 				<div class="row">
 					<div class="mb-3 col-md-4">
-						<label for="duration" class="form-label"
+						<label for="startTime" class="form-label"
 							>Starting Time</label
 						>
 						<input
-							name="duration"
+							name="startTime"
 							placeholder="Enter a Duration for your task"
 							type="time"
-							id="duration"
+							id="startTime"
 							class="form-control"
 							required />
 						<div class="invalid-feedback">
@@ -53,66 +53,21 @@
 						</div>
 					</div>
 					<div class="mb-3 col-md-8">
-						<label for="duration" class="form-label"
+						<label for="endTime" class="form-label"
 							>Ending Time</label
 						>
 						<input
-							name="duration"
+							name="endTime"
 							placeholder="Enter a Duration for your task"
 							type="time"
-							id="duration"
+							id="endTime"
 							class="form-control"
 							required />
 						<div class="invalid-feedback">
 							Please provide a valid time.
 						</div>
 					</div>
-					Repeat Task
-					<div
-						class="btn-group mb-3 "
-						role="group"
-						aria-label="Basic radio toggle button group">
-						<input
-							type="radio"
-							class="btn-check"
-							name="btnradio"
-							id="btnradio1"
-							autocomplete="off"
-							 />
-						<label class="btn .btn-outline-*" for="btnradio1"
-							>Daily</label
-						>
-
-						<input
-							type="radio"
-							class="btn-check"
-							name="btnradio"
-							id="btnradio2"
-							autocomplete="off" />
-						<label class="btn .btn-outline-*" for="btnradio2"
-							>Weekly</label
-						>
-
-						<input
-							type="radio"
-							class="btn-check"
-							name="btnradio"
-							id="btnradio3"
-							autocomplete="off" />
-						<label class="btn .btn-outline-*" for="btnradio3"
-							>Monthly</label
-						>
-						<input
-							type="radio"
-							class="btn-check"
-							name="btnradio"
-							id="btnradio3"
-							autocomplete="off" />
-						<label class="btn .btn-outline-*" for="btnradio3"
-							>Yearly</label
-						>
-					</div>
-				</div>
+					
 				<button class="btn btn-dark add-btn">Add</button>
 			</form>
 		</div>
