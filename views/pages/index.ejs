@@ -23,7 +23,7 @@
 					</div>
 				</a>
 				<br>
-				<h6>Settings</h6>
+				<h6> <i class="fa-solid fa-gears"></i> &nbsp;Settings</h6>
 				<a href="/profile">
 					<div class="btn .btn-outline-*">
 						<i class="fa-regular fa-user"></i></i>Profile
@@ -35,8 +35,6 @@
 						<i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
 					</div>
 				</a>
-				<br />
-				<br />
 				<br />
 				<br />
 				<hr>
@@ -63,7 +61,7 @@
 					<% tasks.forEach(task=> { %>
 						<% if (!task.done) { %>
 							<div class="activity">
-								<%= task.task %> -> <%= task.startTime %> &nbsp;- <%= task.endTime %>
+								<%= task.task %> <i class="fa-solid fa-arrow-right-long"></i> <%= task.startTime %> &nbsp;- <%= task.endTime %>
 											<br>
 											<% if (task.date) { %>
 												Date: <%= task.date.toLocaleDateString() %>
@@ -71,16 +69,16 @@
 
 														<div class="options">
 															<form method="POST" action="/done/<%= task._id %>">
-																<button class="btn .btn-outline-* dlt"><i
-																		class="fa-regular fa-circle-check chk"></i>
+																<button class="btn .btn-outline-* dlt "><i
+																		class="fa-regular fa-circle-check chk i"></i>
 																</button>
 															</form>
 															<a href="/edit/<%= task._id %>"><i
-																	class="fa-solid fa-pen edt"></i></a>
+																	class="fa-solid fa-pen edt i"></i></a>
 															<form method="POST"
 																action="/delete/<%= task._id %>?_method=DELETE">
 																<button class="btn .btn-outline-* dlt">
-																	<i class="fa-solid fa-trash-can"></i>
+																	<i class="fa-solid fa-trash-can i"></i>
 																</button>
 															</form>
 														</div>
@@ -91,23 +89,26 @@
 			</div>
 		</div>
 		<div class="right-container">
-			<div class="completed-task">
+			<div class="completed-task task">
 				<span>
 					<%= tasks.filter(task=> task.done).length %>
 				</span> <br />
-				Completed tasks
+				Completed tasks &nbsp;
+				<i class="fa-solid fa-clipboard-check i"></i>
 			</div>
-			<div class="todo-task">
+			<div class="todo-task task">
 				<span>
 					<%= tasks.filter(task=> !task.done).length + tasks.filter(task => !task.done).length %>
 				</span> <br />
-				Todo Tasks
+				Todo Tasks &nbsp;
+				<i class="fa-solid fa-person-running i"></i>
 			</div>
-			<div class="ongoing-task">
+			<div class="ongoing-task task">
 				<span>
 					<%= tasks.filter(task=> !task.done).length %>
 				</span> <br />
-				Ongoing Tasks
+				Ongoing Tasks &nbsp;
+				<i class="fa-solid fa-clock i"></i>
 			</div>
 
 

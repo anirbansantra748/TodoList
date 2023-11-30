@@ -51,13 +51,14 @@ body {
 	border-radius: 10px; /* Optional: Add border radius for rounded corners */
 }
 .navbar {
+	font-family:sans-serif;
 	display: flex !important;
 	justify-content: space-between !important;
 	align-items: center !important;
 	width: 100% !important;
 	padding: 10px 0 !important; /* Adjust the padding as needed */
 	box-sizing: border-box !important;
-	color: aliceblue;
+	color: rgb(255, 255, 255);
 }
 
 .navbar h3 {
@@ -81,7 +82,7 @@ body {
 	width: 79% !important;
 }
 .navbar-brand{
-	color: aliceblue !important;
+	color: rgb(255, 255, 255) !important;
 }
 
 .container-fluid {
@@ -93,7 +94,7 @@ body {
 }
 
 .left-container {
-	background-color: rgb(247, 245, 245);
+	background-color: rgb(255, 255, 255);
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-top-right-radius: 0;
@@ -276,6 +277,7 @@ body {
 	text-align: left;
 	text-decoration: none;
 	overflow-x: hidden;
+	font-family: roboto;
 }
 
 .done-tasks::-webkit-scrollbar {
@@ -352,6 +354,7 @@ h5 {
 	margin: 3px 0 0 1rem ;
 	padding: 10px;
 	text-align: left;
+	color: rgb(255, 234, 0);
 }
 .compt form{
 	margin-right: 0 !important;
@@ -412,4 +415,12 @@ i {
 }
 .f-info-brand {
 	color: whitesmoke;
+}
+
+.i{
+	font-size: 1.2rem;
+}
+.completed{
+	font-family: roboto;
+	font-size: 1.2rem;
 }
