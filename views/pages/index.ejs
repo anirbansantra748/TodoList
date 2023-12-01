@@ -61,7 +61,8 @@
 					<% tasks.forEach(task=> { %>
 						<% if (!task.done) { %>
 							<div class="activity">
-								<%= task.task %> <i class="fa-solid fa-arrow-right-long"></i> <%= task.startTime %> &nbsp;- <%= task.endTime %>
+								<%= task.task %> <i class="fa-solid fa-arrow-right-long"></i>
+									<%= task.startTime %> &nbsp;- <%= task.endTime %>
 											<br>
 											<% if (task.date) { %>
 												Date: <%= task.date.toLocaleDateString() %>
@@ -120,7 +121,7 @@
 							<% if(task.done){ %>
 								<div class="compt">
 									<s>
-										<%= task.task %>
+										<%= task.task.substring(0, 30) %>
 									</s>
 									<form method="POST" action="/delete/<%= task._id %>?_method=DELETE">
 										<button class="btn .btn-outline-* dlt-1">
