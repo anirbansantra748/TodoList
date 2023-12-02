@@ -104,6 +104,19 @@ app.post("/done/:id",async (req,res)=>{
   res.redirect("/home");
 });
 
+//SECTION - Users Routs
+//signup 
+app.get("/signup",(req,res)=>{
+  res.render("users/profile.ejs");
+})
+
+
+app.get("/login",(req,res)=>{
+  res.render("users/login.ejs");
+})
+
+
+
 //root route
 app.get('/',(req,res)=>{
   res.send("todo app");
