@@ -107,7 +107,7 @@ app.post("/done/:id",async (req,res)=>{
 //SECTION - Users Routs
 //signup 
 app.get("/signup",(req,res)=>{
-  res.render("users/profile.ejs");
+  res.render("users/signup.ejs");
 })
 
 
@@ -121,6 +121,10 @@ app.get("/login",(req,res)=>{
 app.get('/',(req,res)=>{
   res.send("todo app");
 });
+
+app.get("*", (req,res)=>{
+  res.render("pages/errorpage.ejs");
+})
 
 app.listen(port,()=>{
   console.log("app is started");
