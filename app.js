@@ -124,7 +124,7 @@ app.get('/',(req,res)=>{
 
 app.get("*", (req,res)=>{
   res.render("pages/errorpage.ejs");
-})
+});
 
 app.listen(port,()=>{
   console.log("app is started");
