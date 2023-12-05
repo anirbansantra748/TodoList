@@ -6,6 +6,9 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const mongoose = require("mongoose");
 const TODO = require("./models/todo.js");
+const passport = require("passport");
+const localStatergy = require("passport-local");
+const User = require("./models/user.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
