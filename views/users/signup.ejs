@@ -1,18 +1,22 @@
-<% layout("/layouts/boilerplate.ejs") %>
+<% layout("/layouts/boilerplate2.ejs") %>
 
 <body>
   <div class="dashboard-add row">
-    <div class="col-8 offset-2 mt-3">
-      <br />
-      <h2>Sign Up to TaskHive</h2>
-      <br />
+    <div class="col-2 offset-1 mt-3 mb-3">
+      
+      <img src="https://i.imgur.com/DjW1enC.png" alt="image" class="img">
+    </div>
+    <br><br>
+    <div class="col-6 offset-2 mt-4">
+      <h2>Sign up to TaskHive</h2>
       <form
-        action="/add"
-        method="post"
+        action="/signup" 
+        method="POST"
         novalidate
         class="needs-validation"
       >
-        <div class="mb-3">
+      <br>
+        <div class="mb-3 mt-3">
           <label for="username" class="form-label">
             <i class="fas fa-user"></i> Username
           </label>
@@ -34,7 +38,7 @@
           </label>
           <input
             name="password"
-            placeholder="Enter a valid password"
+            placeholder="Enter a strong password"
             type="password"
             id="password"
             class="form-control"
@@ -46,61 +50,9 @@
         </div>
 
         <button class="btn btn-dark add-btn login-btn">
-          <i class="fas fa-user-plus"></i> Sign Up
+          <i class="fas fa-sign-in-alt"></i> Signup
         </button>
       </form>
     </div>
   </div>
 </body>
-
-
-
-<!-- <% layout("/layouts/boilerplate.ejs") %>
-
-    <body class="transparent-bg">
-        <div class="pro-container rounded  mt-5 mb-5">
-            <div class="row">
-                <div class="col-md-3 border-right">
-                    <label for="profile-photo-upload">
-                        <img class="rounded-circle mt-5" width="150px"
-                            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-                            id="profile-photo">
-                    </label>
-                    <input type="file" id="profile-photo-upload" style="display: none;" accept="image/*"
-                        onchange="displayImage(this)">
-                </div>
-                <div class="col-md-5 border-right">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Profile Settings</h4>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text"
-                                    class="form-control" placeholder="enter phone number" value=""></div>
-                            <div class="col-md-12"><label class="labels">Email ID</label><input type="text"
-                                    class="form-control" placeholder="enter email id" value=""></div>
-                            
-                        </div>
-                        
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
-                                Profile</button></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        </div>
-        </div>
-        <script>//try clicking the photo
-            function displayImage(input) {
-                const file = input.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        document.getElementById('profile-photo').src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            }
-        </script>
-    </body> -->

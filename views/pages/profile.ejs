@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <!-- make this page so that user can update his own details -->
+	<div class="dashboard-add row">
+		<div class="col-8 offset-2 mt-3">
+			<br />
+			<h2>User Details</h2>
+			<br />
+			<form
+				action="/add"
+				method="post"
+				novalidate
+				class="needs-validation">
+				<div class="mb-3">
+					<label for="task" class="form-label">Username</label>
+					<input
+						name="username"
+						id="username"
+						value="user-name"
+						type="text"
+						class="form-control"
+						required />
+					<div class="invalid-feedback">
+						Please provide a unique username.
+					</div>
+				</div>
+				<div class="mb-3">
+					<label for="date" class="form-label">Email ID</label>
+					<input
+						name="email"
+						value="exp@gamil.com"
+						type="email"
+						id="email"
+						class="form-control"
+						required />
+					<div class="invalid-feedback">
+						Please provide a valid Email Id.
+					</div>
+				</div>
+				
+				<button class="btn btn-dark add-btn mt-3 mb-3">Add</button>
+				<button class="btn btn-dark add-btn">Change Password</button>
+			</form>
+		</div>
+	</div>
+</body>
