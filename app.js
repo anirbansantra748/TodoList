@@ -134,17 +134,25 @@ app.get("/signup",(req,res)=>{
 });
 
 app.post("/signup",async(req,res)=>{
-  const {username,email,password} = req.body;
+  try{
+    const {username,email,password} = req.body;
   let newUser = new User({email,username});
   const registerUser = await User.register(newUser,password);
   res.send(registerUser);
+  }catch(err){
+    console.log(err);
+    res.redirect("/signup");
+  }
 })
 
-
+//Login rout 
 app.get("/login",(req,res)=>{
   res.render("users/login.ejs");
 })
 
+app.post("/login", passport.authenticate("local", {failureRedirect: "/login", successFlash:true}) ,async(req,res)=>{
+  res.redirect("/home");
+})
 
 
 //root route
