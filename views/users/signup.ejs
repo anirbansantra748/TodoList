@@ -8,14 +8,13 @@
     </div>
     <br><br>
     <div class="col-6 offset-2 mt-4">
-      <h2>Sign up to TaskHive</h2>
+      <h1><b>Sign up to TaskHive</b></h1>
       <form
         action="/signup" 
         method="POST"
         novalidate
         class="needs-validation"
       >
-      <br>
         <div class="mb-3 mt-3">
           <label for="username" class="form-label">
             <i class="fas fa-user"></i> Username
@@ -32,6 +31,23 @@
             Please provide a valid username.
           </div>
         </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">
+            <i class="fa-solid fa-envelope-circle-check"></i> email
+          </label>
+          <input
+            name="email"
+            placeholder="Enter a strong password"
+            type="text"
+            id="email"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">
+            Please provide a valid email.
+          </div>
+        </div>
+
         <div class="mb-3">
           <label for="password" class="form-label">
             <i class="fas fa-lock"></i> Password
