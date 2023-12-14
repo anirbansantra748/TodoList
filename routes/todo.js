@@ -26,6 +26,13 @@ router.get("/profile", (req, res) => {
   res.render("pages/profile.ejs");
 });
 
+//check
+router.get("/check", async(req,res)=>{
+  const searchTerm = req.query.search;
+  const tasks = await TODO.find({task: { $regex: searchTerm, $options: 'i' }});
+
+  res.render("pages/search.ejs",{tasks,searchTerm});
+})
 // Save task to the database
 router.post("/add", async (req, res) => {
   const { task, date, startTime, endTime } = req.body;
